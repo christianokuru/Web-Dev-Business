@@ -1,8 +1,7 @@
 /* The Structure of each folder should go like this 
-    section>.wrapper>.sect-intro
-    The .sect-intro>.sect-title+.sect-subtitle is ALWAYS under the .wrapper
+    section>.wrapper>.sect-details
+    The .sect-details>.sect-title+.sect-subtitle is ALWAYS under the .wrapper
 */
-@import "tailwindcss/config";
 @import "tailwindcss";
 /* Global Variables */
 :root{
@@ -28,8 +27,8 @@
     --min-width:330px;
 
     /* Height Variables */
-    --min-height:99dvh;
-    --min-height-half:47dvh;
+    --full-min-height:99dvh;
+    --half-min-height:47dvh;
 }
 
 *{
@@ -37,32 +36,41 @@
 }
 
 body{
-
+    @apply bg-[var(--background-color)]
 }
 
 section{
-
+    @apply min-h-[var(--full-min-height)] flex items-center justify-center 
 }
 
 section.half{
-
+    @apply min-h-[var(--half-min-height)]
 }
 .wrapper{
-    
+    @apply max-w-[var(--max-width)] flex flex-col w-full items-center justify-center gap-10
 }
-.wrapper > .sect-intro{
+.sect-details{
 
     .sect-title{
-
+        span{
+            background: linear-gradient(to right, var(--primary-color), var(--error-color));
+            @apply bg-clip-text text-transparent
+        }
+        @apply text-[3.5em] font-[600] text-center 
     }
 
     .sect-subtitle{
-
+        @apply text-[1.4em] text-[var(--text-color)] text-center
     }
-
+    @apply flex flex-col w-full max-w-[70%] gap-4
 }
 .card-wrapper{
 
 }
 
-.button-wrapper{}
+.button-wrapper{
+    button{
+        @apply bg-[var(--primary-color)] px-6 py-1.5 text-white
+    }
+    @apply flex flex-wrap gap-10
+}
