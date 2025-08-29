@@ -21,6 +21,8 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.542.0",
+    "mogoose": "^0.0.1-security",
+    "mongoose": "^8.18.0",
     "next": "15.5.2",
     "next-themes": "^0.4.6",
     "react": "19.1.0",
